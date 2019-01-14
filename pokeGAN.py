@@ -9,7 +9,6 @@ import numpy as np
 import cv2
 import random
 import scipy.misc
-from resize import resize
 from utils import *
 
 slim = tf.contrib.slim
@@ -276,7 +275,7 @@ def train():
 
 
 if __name__ == "__main__":
-    resize()
+    
     train()
     # test()
 
