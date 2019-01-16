@@ -15,7 +15,7 @@ slim = tf.contrib.slim
 
 HEIGHT, WIDTH, CHANNEL = 128, 128, 3
 BATCH_SIZE = 64
-EPOCH = 5000
+EPOCH = 5001
 version = 'newPokemon'
 newPoke_path = './' + version
 
@@ -32,8 +32,7 @@ def process_data():
     # print images    
     all_images = tf.convert_to_tensor(images, dtype = tf.string)
     
-    images_queue = tf.train.slice_input_producer(
-                                        [all_images])
+    images_queue = tf.train.slice_input_producer([all_images])
                                         
     content = tf.read_file(images_queue[0])
     image = tf.image.decode_jpeg(content, channels = CHANNEL)

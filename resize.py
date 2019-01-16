@@ -2,9 +2,7 @@
 import os
 import cv2
 
-def resize():
-    src = "./data"  # pokeRGB_black
-    dst = "./resizedData"  # resized
+def resize(size=256, src="./data", dst="./resizedData"):
     if not os.path.exists(dst):
         os.mkdir(dst)
 
@@ -12,5 +10,5 @@ def resize():
         img = cv2.imread(os.path.join(src, each), cv2.IMREAD_UNCHANGED)
         for i in range(3):
             img[:, :, i][img[:, :, 3] == 0] = 1
-        img = cv2.resize(img, (256, 256))
+        img = cv2.resize(img, (size, size))
         cv2.imwrite(os.path.join(dst, each), img[:, :, :3])
