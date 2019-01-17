@@ -13,9 +13,9 @@ from utils import *
 
 slim = tf.contrib.slim
 
-HEIGHT, WIDTH, CHANNEL = 128, 128, 3
+HEIGHT, WIDTH, CHANNEL = 215, 215, 3
 BATCH_SIZE = 64
-EPOCH = 1501
+EPOCH = 10000
 version = 'newPokemon'
 newPoke_path = './' + version
 
@@ -161,7 +161,7 @@ def discriminator(input, is_train, reuse=False):
 
 
 def train():
-    random_dim = 100
+    random_dim = 215
     
     with tf.variable_scope('input'):
         #real and fake image placholders

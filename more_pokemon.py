@@ -11,5 +11,5 @@ for x in range(1, 810):
     arr = np.asarray(bytearray(r.content), dtype=np.uint8)
     img = cv2.imdecode(arr, cv2.IMREAD_UNCHANGED)
     for i in range(3):
-        img[:, :, i][img[:, :, 3] == 0] = 1
+        img[:, :, i][img[:, :, 3] == 0] = 255
     cv2.imwrite('./data/{:03d}.png'.format(x), img[:,:,:3])
