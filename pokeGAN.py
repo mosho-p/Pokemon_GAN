@@ -208,9 +208,8 @@ def train():
     print('batch size: %d, batch num per epoch: %d, epoch num: %d' % (batch_size, batch_num, EPOCH))
     print('start training...')
     for i in range(EPOCH):
-        print("Running epoch {}/{}...".format(i, EPOCH))
         for j in range(batch_num):
-            print(j)
+            print("Running epoch {}/{}...{}".format(i, EPOCH, j), end='\r')
             d_iters = 5
             g_iters = 1
 
