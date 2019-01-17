@@ -212,13 +212,12 @@ def train():
     print('start training...')
     for i in range(EPOCH):
         for j in range(batch_num):
-            print("Running epoch {}/{}...{}".format(i, EPOCH, j), end='\r')
             d_iters = 5
             g_iters = 1
 
             train_noise = np.random.uniform(-1.0, 1.0, size=[batch_size, random_dim]).astype(np.float32)
             for k in range(d_iters):
-                print(k)
+                print("Running epoch {}/{}...{}.{}".format(i, EPOCH, j, k), end='\r')
                 train_image = sess.run(image_batch)
                 #wgan clip weights
                 sess.run(d_clip)
