@@ -15,7 +15,7 @@ slim = tf.contrib.slim
 
 HEIGHT, WIDTH, CHANNEL = 128, 128, 3
 BATCH_SIZE = 64
-EPOCH = 501
+EPOCH = 1501
 version = 'newPokemon'
 newPoke_path = './' + version
 
